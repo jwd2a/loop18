@@ -7662,5 +7662,8 @@ p {
 
   .form {
     width: 50%; } }
+@media (max-width: 768px) {
+  p {
+    font-size: 1em; } }
 
 /*# sourceMappingURL=main.css.map */
