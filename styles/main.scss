@@ -1,10 +1,15 @@
 $theme-colors: (
   "primary": #5c3800,
+  "secondary": #C3C5C0,
 );
 
 $btn-border-radius: 0;
 $btn-padding-y: 1em;
 $btn-padding-x: 4em;
+
+$card-border-radius: 0;
+
+$input-border-radius: 0;
 
 $section-padding: 100px;
 
@@ -104,5 +109,8 @@ p {
 @media(min-width:768px) {
   .headline {
     min-height: 800px;
+  }
+  .form {
+    width: 50%;
   }
 }
