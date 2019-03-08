@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Mont;
+  src: url(../fonts/Mont_Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: bold;
+  src: url(../fonts/Mont_Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: bolder;
+  src: url(../fonts/Mont-Book.otf) format('opentype');
+}
+
+body {
+  font-family: Mont;
+}
+
+.header-bg {
+  background-image: url(../img/cabot-cliffs.jpg);
+  background-size: cover;
+}
