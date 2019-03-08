@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loop18: We help golf execute on digital better.</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-  <style>
-
-  </style>
+  <link rel="stylesheet" href="styles/main.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <!--
@@ -132,18 +130,21 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-12 contact-response invisible">
+          <p class="text-center">Thanks! We're excited to chat with you. We'll be in touch very soon!</p>
+        </div>
         <div class="form mx-auto">
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="form-group">
                 <label>Your name:</label>
-                <input type="text" class="form-control"> 
+                <input type="text" class="form-control" id="contact_name"> 
               </div>
             </div>
             <div class="col-12 col-md-6">
               <div class="form-group">
                 <label>Your email:</label>
-                <input type="text" class="form-control"> 
+                <input type="text" class="form-control" id="contact_email"> 
               </div>
             </div>
           </div>
@@ -151,11 +152,11 @@
             <div class="col-12">
               <div class="form-group">
                 <label>Anything on your mind?</label> 
-                <textarea class="form-control"></textarea>
+                <textarea class="form-control" id="contact_message"></textarea>
               </div>
             </div>
           </div>
-          <button class="btn btn-secondary d-block mt-3 mx-auto">
+          <button class="btn btn-secondary d-block mt-3 mx-auto" id="contact_submit">
             Let's talk
           </button>
         </div>
@@ -182,6 +183,30 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-134922473-1');
+</script>
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+ (function(){
+    emailjs.init("user_9VtFjcN5EsHZ6varPRQSb");
+ })();
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#contact_submit").click(function() {
+      var payload = {
+        name: $("#contact_name").val(),
+        email: $("#contact_email").val(),
+        message: $("#contact_message").val(),
+      };
+      emailjs.send("default_service", "loop18_contact", payload)
+        .then(function(response) {
+          $(".form").hide();
+          $(".contact-response").removeClass("invisible");
+        }, function(error) {
+          console.log('Ooops, error', error);
+        });
+    });
+  });
 </script>
 </body>
 </html>
