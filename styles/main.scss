@@ -6,6 +6,8 @@ $btn-border-radius: 0;
 $btn-padding-y: 1em;
 $btn-padding-x: 4em;
 
+$section-padding: 100px;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 @font-face {
@@ -19,8 +21,31 @@ $btn-padding-x: 4em;
   src: url(../fonts/Mont_SemiBold.otf) format('opentype');
 }
 
+@font-face {
+  font-family: Mont;
+  font-weight: light;
+  src: url(../fonts/Mont_Light.otf) format('opentype');
+}
+
 body {
   font-family: Mont;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.7em;
+  margin-bottom: 2em;
+}
+
+.content-section {
+  .col-md-6, .col-12 {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+  }
 }
 
 .header {
@@ -52,8 +77,28 @@ body {
   background-image: url(../img/bg-grass.jpg);
 }
 
+.services {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+}
+
 .contact {
   background-color: #2c3622;
+}
+
+.card {
+  color: #000000;
+  p {
+    font-size: 1em;
+  }
+}
+
+.card-img-top {
+  height: 250px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
 }
 
 @media(min-width:768px) {
