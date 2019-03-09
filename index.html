@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css"> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
 </head>
 <body>
   <!--
@@ -26,7 +27,7 @@
         <div class="col-12 col-md-6 p-5 bg-white headline text-center text-md-left">
           <img src="/img/logo.jpg" style="width: 200px" class="mx-auto ml-md-0">
           <h1 class="font-weight-bold">We help golf brands execute on digital better.</h1>
-          <button class="btn btn-primary mb-5 mx-auto ml-md-0">
+          <button class="btn btn-primary mb-5 mx-auto ml-md-0 header-contact">
             Get in Touch
           </button>
         </div>
@@ -205,6 +206,14 @@
         }, function(error) {
           console.log('Ooops, error', error);
         });
+    });
+  });
+</script>
+<script>
+  $(".header-contact").click(function() {
+    $.scrollTo(".contact", {
+      duration: '250',
+      easing: 'swing',
     });
   });
 </script>
